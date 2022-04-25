@@ -1,0 +1,21 @@
+version: "3"
+volumes:
+  rstudio-library:
+    external: false
+services:
+  rstudio:
+    build: .
+    env_file:
+      - .envfile.env
+    tty: true
+    stdin_open: true
+    image: rstudio4.2.0
+    container_name: rstudio4.2.0
+    ports:
+      - 8787:8787
+    volumes:
+      - type: volume
+        source: rstudio-library
+        target: /home/rstudio/R/library
+        read_only: false
+
