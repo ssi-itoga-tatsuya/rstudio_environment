@@ -1,14 +1,15 @@
 FROM rocker/rstudio:4.2.0
 
 RUN apt update
-RUN apt install vim -y
-RUN apt install less -y
-RUN apt install libxml2-dev -y
-RUN apt install zlib1g-dev -y
-RUN apt install libpng-dev -y
-RUN apt install libbz2-dev -y
-RUN apt install liblzma-dev -y
-RUN apt install libgsl-dev -y
+RUN apt install -y vim
+RUN apt install -y less
+RUN apt install -y libxml2-dev
+RUN apt install -y zlib1g-dev
+RUN apt install -y libpng-dev
+RUN apt install -y libbz2-dev
+RUN apt install -y liblzma-dev
+RUN apt install -y libgsl-dev
+RUN apt install -y libglpk-dev
 
 WORKDIR /home/rstudio
 RUN mkdir -p R/library
