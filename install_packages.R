@@ -1,1 +1,1 @@
-install.packages("BiocManager")
+install.packages("BiocManager", repos = "https://cran.r-project.org/")

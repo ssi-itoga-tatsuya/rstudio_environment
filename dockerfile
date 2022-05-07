@@ -12,11 +12,13 @@ RUN apt install -y libgsl-dev
 RUN apt install -y libglpk-dev
 
 WORKDIR /home/rstudio
-RUN mkdir -p R/library
-RUN chown -R rstudio:rstudio R
+EXPOSE 8787
 
 COPY rsession.conf /etc/rstudio
 
+RUN mkdir -p R/library
+RUN chown -R rstudio:rstudio R
+
 COPY install_packages.R /tmp/
 WORKDIR /tmp
-RUN Rscript install_packages.R
+RUN Rscript --verbose install_packages.R
