@@ -8,9 +8,9 @@ services:
     env_file:
       - .envfile.env
     tty: true
-    stdin_open: true
-    image: rstudio4.2.0
-    container_name: rstudio4.2.0
+    stdin_open: false
+    image: rstudio4.1.3
+    container_name: rstudio4.1.3
     ports:
       - 8787:8787
     volumes:
