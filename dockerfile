@@ -11,6 +11,7 @@ RUN apt install -y liblzma-dev
 RUN apt install -y libgsl-dev
 RUN apt install -y libglpk-dev
 
+RUN apt install -y locales language-pack-ja-base language-pack-ja
 RUN locale-gen ja_JP.UTF-8
 ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:ja
